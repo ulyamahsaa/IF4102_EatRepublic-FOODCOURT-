@@ -3,7 +3,7 @@
 <head>
 	<title>Eat Republic</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	  <link rel="icon" href="src/depan_regi.png">
+		  <link rel="icon" href="src/depan_regi.png">
 </head>
 
 <style>
@@ -57,7 +57,7 @@ body{
 
 
 <body>
-<nav class="navbar-light bg-light vertical-navigation">
+<nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
   <ul class="navbar-nav">
     <li class="nav-item active">
     	<a class="nav-link active" href="1.Login.html" disabled>
@@ -65,10 +65,18 @@ body{
   		</a>
     </li>
     <li class="nav-item"> 
-      <a class="nav-link" href="5.payment.html" disabled><img src="src/payment-method.png" alt="payment"></a>
+      <a class="nav-link" href="5.pemesanan.html" disabled><img src="src/payment-method.png" alt="payment"></a>
+      <p style="margin-left: 20px; font-family:'Wacca Regular' ">Pesan</p>
+    </li>
+    <li class="nav-item"> 
+      <a class="nav-link" style="margin-top:600px;" href="8.info_bayar.html" disabled>
+      	<img  src="src/logo.png" alt="payment">
+      </a>
     </li>
     <li class="nav-item" style="margin-top: 39rem;">
-    	<a class="nav-link" href="#"><img src="src/logo.png"></a>
+    	<a class="nav-link" href="#">
+    		<img src="src/logo.png">
+    	</a>
     </li>
   </ul>
 </nav>
@@ -78,14 +86,18 @@ body{
 		<div class="col-xs-6">
 			<h1 class="text-right"><img src="src/logo.png"></h1>
 		</div>
-		<div class="col-xs-6">
-			<h1 class="text-center">Upload Bukti Pembayaran</h1>
+		<div class="col-xs-6" style="margin-top: 3rem;">
+			<h1 class="text-center">Kode Pembayaran</h1>
+			<!-- custom font should be use according to the plan -->
 		</div>
-		<div class="col-xs-6">
-			<h2 class="text-center" style="margin-top: 2rem;"><input type="file" name="proof_of_payment"></h2>
+		<div class="col-xs-6" style="margin-top: 2rem;">
+			<h1 name="code_payment" class="text-center" style="color: yellow;">PEX45Q</h1>
+			<!-- Code Payment that are stated in the h1 tag
+			is just dummy data -->
 		</div>
-		<div class="col-xs-6">
-			<a href="7.information_status.html"><h3 class="text-center"><button class="btn btn-primary" style="margin-bottom: 2rem; margin-top: 2rem;">OK</button></h3></a>
+		<div class="col-xs-6" style="margin-top: 3rem; margin-bottom: 5rem;">
+			<a href="9.bukti_bayar.html"><p class="text-center"><button class="btn btn-primary" style="margin-bottom: 3rem;">Pembayaran</button></p></a>
+			<!-- button color should follow from the plan. -->
 		</div>
 	</div>
 </div>
