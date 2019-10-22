@@ -6,7 +6,11 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   	<link rel="icon" href="<?php echo base_url('')?>assets/image/depan_regi.png">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<style type="text/css">
+
 
 	@font-face {
 		font-family: Wacca Regular; src: url('Wacca-Regular.otf');
@@ -68,6 +72,12 @@
 	</style>
 </head>
 <body>
+	<?php if ($this->session->flashdata('notif')) { ?>
+			<div class="alert alert-danger alert-dismissible">
+		    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		    	<center><strong>Registrasi Gagal!</strong> Alamat email telah terpakai akun lain.</center>
+  			</div>
+  	<?php } ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6">
@@ -101,9 +111,7 @@
 			</div>
 			
 		</div>
-		
-		
-	</div>
-
+	</div>	
 </body>
+
 </html>

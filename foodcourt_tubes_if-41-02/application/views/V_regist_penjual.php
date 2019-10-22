@@ -6,6 +6,7 @@
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	  	<link rel="icon" href="<?php echo base_url('')?>assets/image/depan_regi.png">
+	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" media="all">
 	<style type="text/css">
 	
 	@font-face {
@@ -80,23 +81,24 @@
 					</a>
 					<h3 class="warna">Registrasi <b><span class="warna1"> penjual</span></b></h3>
 					<h5>Silahkan mengisi form dengan lengkap</h5>
-					<form >
+					<form action="<?php echo site_url('C_regispenjual/proses_regis_penjual')?>" method="POST" class="form-sigin">
 						<div class="form-group" style="margin-left: 10.5%; margin-right: 10%; font-family: Wacca Regular">
-					    	<input type="nama" class="form-control" placeholder="Nama Lengkap" required>
-					    	<input type="email" class="form-control" placeholder="E-mail" required>
-					    	<input type="Username" class="form-control" placeholder="Username" required>
-					    	<input type="Password" class="form-control" placeholder="Password" required>
-					    	<input type="Jeniskelamin" class="form-control" placeholder="Jenis Kelamin" required>
-  							<div class="custom-file" required>
-    							<input type="file" class="custom-file-input">
-    								<label class="custom-file-label">Cv Toko</label>
-  							</div>
-					    	<input type="namatoko" class="form-control" placeholder="Nama Toko" required required>
-					    	<input type="alamat" class="form-control" placeholder="Alamat" required>
-					    	<input type="no_handphone" class="form-control" placeholder="No. Handphone" required>
+					    	<input type="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+					    	<input type="email"  name="email" class="form-control" placeholder="E-mail" required>
+					    	<input type="Username" name="Username" class="form-control" placeholder="Username" required>
+					    	<input type="Password" name="Password" class="form-control" placeholder="Password" required>
+					    	<input type="Jeniskelamin" name="jeniskelamin" class="form-control" placeholder="Jenis Kelamin" required>
+					    	<input type="Usia" name="usia" class="form-control" placeholder="Usia" required>
+  						
+    						<input type="file" name="gambar" class="form-control">
+    							
+					    	<input type="namatoko" name="namatoko" class="form-control" placeholder="Nama Toko" required required>
+					    	<input type="alamat" name="alamat" class="form-control" placeholder="Alamat" required>
+					    	<input type="no_handphone" name="no_handphone" class="form-control" placeholder="No. Handphone" required>
 						</div>
+							<button class="btn btn-dark" style="margin-left: 38%;padding-left:10%;padding-right:10%; font-family: Wacca Regular">Submit</button> 
 					</form>
-					<a class="btn btn-dark" href="<?php echo base_url('') ?>index.php/home" role="button"  style="margin-left: 38%;padding-left:10%;padding-right:10%; font-family: Wacca Regular">Submit</a>
+				
 			</div>
 			<div class="col-sm-6">
 				<div id="foto" class="tabisi">

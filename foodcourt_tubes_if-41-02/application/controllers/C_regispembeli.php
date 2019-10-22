@@ -17,8 +17,12 @@ class C_regispembeli extends CI_Controller {
  		$email = $this->input->post('email');
  		$cek = $this->M_registpembeli->cek_akun($email)->row_array();
  		if($cek > 0){
+ 			$this->session->set_flashdata('notif', 'Register Gagal!
+			Alamat email telah terpakai akun lain.');
  			redirect('C_regispembeli');
  		}else{
+ 			$this->session->set_flashdata('notif', 'Register Berhasil,
+			Selamat Datang di Food Court.');
  			$this->M_registpembeli->regis_pem();
  			redirect('home');
  		}
