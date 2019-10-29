@@ -5,8 +5,10 @@
 		<meta charset="utf-8">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	  	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	  	<link rel="icon" href="<?php echo base_url('')?>assets/image/depan_regi.png">
-	  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css" media="all">
+	  	<link rel="icon" href="<?php echo base_url()?>assets/image/depan_regi.png">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<style type="text/css">
 	
 	@font-face {
@@ -73,6 +75,12 @@
 	</style>
 </head>
 <body>
+	<?php if ($this->session->flashdata('notif')) { ?>
+			<div class="alert alert-danger alert-dismissible">
+		    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		    	<center><strong>Registrasi Gagal!</strong> Alamat email telah terpakai akun lain.</center>
+  			</div>
+  	<?php } ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6">
@@ -81,7 +89,7 @@
 					</a>
 					<h3 class="warna">Registrasi <b><span class="warna1"> penjual</span></b></h3>
 					<h5>Silahkan mengisi form dengan lengkap</h5>
-					<form action="<?php echo site_url('C_regispenjual/proses_regis_penjual')?>" method="POST" class="form-sigin">
+					<form action="<?php echo site_url('C_regispenjual/proses_regis_penjual')?>" method="POST" enctype="multipart/form-data">
 						<div class="form-group" style="margin-left: 10.5%; margin-right: 10%; font-family: Wacca Regular">
 					    	<input type="nama" name="nama" class="form-control" placeholder="Nama Lengkap" required>
 					    	<input type="email"  name="email" class="form-control" placeholder="E-mail" required>

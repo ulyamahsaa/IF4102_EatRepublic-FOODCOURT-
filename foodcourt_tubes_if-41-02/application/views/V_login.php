@@ -83,14 +83,16 @@
 					<a href="<?php echo base_url('') ?>index.php/home"><img class="kiri" src="<?php echo base_url()?>assets/image/sendok.png"></img></a>
 					<h3 class="warna">Selamat datang di <b><span class="warna1">eat republic</span><span style="color: orange">.</span></b></h3>
 					<h4>Silahkan Login.</h4>
-					<form>
+					<form action="<?php echo site_url('home/login')?>" method="POST"class="form-sigin">
 						<div class="form-group" style="margin-left: 10%; margin-right: 15%">
-					    	<input type="Username" class="form-control" placeholder="Username" style="font-family: Wacca Regular">
-					    	<input type="Password" class="form-control" placeholder="Password" style="font-family: Wacca Regular">
+					    	<input name="email" class="form-control" placeholder="Username" style="font-family: Wacca Regular">
+					    	<input name="passwordd" class="form-control" placeholder="Password" style="font-family: Wacca Regular">
 						</div>
+						<button class="btn btn-dark solid" style="margin-left: 18.5%; padding-left:10%; padding-right:10%; margin-right: 5%; font-family: Wacca Regular">Login</button>
+						<a href="<?php echo base_url('') ?>index.php/home/regis"><button type="button" class="btn btn-light"style="padding-left:10%;padding-right:10%; font-family: Wacca Regular">Registrasi</button></a>
+
 					</form>
-					<a href="<?php echo base_url('') ?>index.php/home/pesan"><button type="button" class="btn btn-dark solid" style="margin-left: 18.5%; padding-left:10%; padding-right:10%; margin-right: 5%; font-family: Wacca Regular">Login</button></a>
-					<a href="<?php echo base_url('') ?>index.php/home/regis"><button type="button" class="btn btn-light"style="padding-left:10%;padding-right:10%; font-family: Wacca Regular">Registrasi</button></a>
+					
 			</div>
 			<div class="col-sm-6">
 				<div id="foto" class="tabisi">
