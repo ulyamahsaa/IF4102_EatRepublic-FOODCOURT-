@@ -1,6 +1,6 @@
 <?php
 class M_registpenjual extends CI_model {
-	function reg_penjual($email,$Username,$nama,$Password,$jeniskelamin,$usia,$no_handphone,$namatoko,$file){
+	function reg_penjual($email,$Username,$nama,$Password,$jeniskelamin,$usia,$no_handphone,$namatoko,$status,$file){
 		$data = array(
 			'email'=>$email,
 			'username'=>$Username,
@@ -10,6 +10,7 @@ class M_registpenjual extends CI_model {
 			'usia' =>$usia,
 			'nohp' =>$no_handphone,
 			'nmtoko' =>$namatoko,
+			'statusvalidasi' =>$status,
 			'cvtoko' =>$file,
 		);
 			return $this->db->insert('penjual',$data);

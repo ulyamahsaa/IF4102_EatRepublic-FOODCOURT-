@@ -92,7 +92,11 @@
 					    	<input type="email" name="email" class="form-control" placeholder="E-mail" required>
 					    	<input type="Username" name="Username" class="form-control" placeholder="Username" required>
 					    	<input type="Password" name="Password" class="form-control" placeholder="Password" required>
-					    	<input type="jeniskelamin" name="jeniskelamin" class="form-control" placeholder="Jenis kelamin" required>
+					    	<select type="jeniskelamin" name="jeniskelamin" class="form-control" placeholder="Jenis kelamin" required>
+                                <option value="">Jenis kelamin</option>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                            </select>
 					    	<input type="usia" name="usia" class="form-control" placeholder="Usia" required>
 					    	<input type="no_handphone" name="no_handphone" class="form-control" placeholder="No. Handphone" required>
 					    	<!--<input type="alamat" class="form-control" placeholder="Alamat">-->

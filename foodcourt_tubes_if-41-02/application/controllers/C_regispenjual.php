@@ -39,9 +39,9 @@ class C_regispenjual extends CI_Controller {
 					$usia = $this->input->post('usia',true);
 					$no_handphone = $this->input->post('no_handphone',true);
 					$namatoko = $this->input->post('namatoko',true);
-					
+					$statu = 'tidak valid';
 					$file = $img['file_name'];
-					$this->M_registpenjual->reg_penjual($email,$Username,$nama,$Password,$jeniskelamin,$usia,$no_handphone,$namatoko,$file);
+					$this->M_registpenjual->reg_penjual($email,$Username,$nama,$Password,$jeniskelamin,$usia,$no_handphone,$namatoko,$statu,$file);
 					$this->session->set_flashdata('notif', 'Register Berhasil,Selamat Datang di Food Court.');
 	 				redirect('home');
 	 			}else{

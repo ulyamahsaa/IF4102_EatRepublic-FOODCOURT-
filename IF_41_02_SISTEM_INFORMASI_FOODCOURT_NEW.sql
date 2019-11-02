@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2019 at 12:44 AM
+-- Generation Time: Nov 02, 2019 at 04:10 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `impal_fix`
+-- Database: `tes`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`email`, `nama`, `username`, `passwordd`) VALUES
-('brahma27@gmail.com', 'surya', 'agung', '123456789'),
+('brahma27@gmail.com', 'surya', 'agung', 'brahmasurya'),
 ('m.asjad@gmail.com', 'asjad', 'asjad', '123456789'),
 ('rizky@gmail.com', 'rizky', 'rizky', '123456789'),
 ('sasa@gmail.com', 'sasa', 'sasa', '123456'),
@@ -116,9 +116,9 @@ CREATE TABLE `pembayaran` (
 --
 
 INSERT INTO `pembayaran` (`kodepembayaran`, `kodetransaksi`, `namapemesana`, `namamakanan`, `totalharga`, `email`, `status`, `email_admin`) VALUES
-('A01', 'B01', 'brahma', 'ayam bakar', 20000, 'agung@gmail.com', 'berhasil', 'brahma27@gmail.com'),
-('A02', 'B02', 'ulya', 'ayam bakar', 20000, 'agung@gmail.com', 'berhasil', 'brahma27@gmail.com'),
-('A03', 'B01', 'sasa', 'ayam goreng', 10000, 'agung@gmail.com', 'berhasil', 'sasa@gmail.com'),
+('A01', 'B01', 'brahma', 'ayam bakar', 20000, 'agung@gmail.com', '', 'brahma27@gmail.com'),
+('A02', 'B02', 'ulya', 'ayam bakar', 20000, 'agung@gmail.com', '', 'brahma27@gmail.com'),
+('A03', 'B01', 'sasa', 'ayam goreng', 10000, 'agung@gmail.com', '', 'sasa@gmail.com'),
 ('A04', 'B03', 'rizky', 'ayam geprek', 20000, 'agung@gmail.com', 'berhasil', 'ulya@gmail.com'),
 ('A05', 'B04', 'm.asjas', 'ayam pepes', 20000, 'agung@gmail.com', 'berhasil', 'rizky@gmail.com');
 
@@ -143,11 +143,14 @@ CREATE TABLE `pembeli` (
 --
 
 INSERT INTO `pembeli` (`email`, `username`, `nama`, `passwordd`, `jeniskelamin`, `usia`, `nohp`) VALUES
-('brahmasurya27@gmail.com', 'brahmasurya', 'brahma', '123456', 'L', 20, '081238463707'),
-('M.asjad@gmail.com', 'asjadadna', 'asjad', '123456', 'L', 20, '081238463710'),
-('masaya@gmail.com', 'masayazata', 'sasa', '123456', 'P', 20, '081238463709'),
-('rezky@gmail.com', 'rezky', 'rezky', '123456', 'L', 20, '081238463711'),
-('ulyamahsa@gmail.com', 'ulyaananda', 'ulya', '12345', 'P', 20, '081238463708');
+('bas@gmail.com', 'brahma', 'Gde Agung Brahmana Suryanegara', 'basur', 'Laki-laki', 12, '081234554545'),
+('brahmasurya27@gmail.com', 'brahmasurya', 'brahma', '123456', 'Laki-laki', 20, '081238463707'),
+('dsdsd@gmail.com', 'qwqwqw', 'dsdsd', '212121', 'Laki-laki', 22, '121212'),
+('M.asjad@gmail.com', 'asjadadna', 'asjad', '123456', 'Laki-laki', 20, '081238463710'),
+('masaya@gmail.com', 'masayazata', 'sasa', '123456', 'Perempuan', 20, '081238463709'),
+('qwqwqwqw@gmail.com', 'qwqwqw', 'sasas', '1212qwqw', 'Perempuan', 21, '2121212'),
+('rezky@gmail.com', 'rezky', 'rezky', '123456', 'Laki-laki', 20, '081238463711'),
+('ulyamahsa@gmail.com', 'ulyaananda', 'ulya', '12345', 'Perempuan', 20, '081238463708');
 
 -- --------------------------------------------------------
 
@@ -173,11 +176,15 @@ CREATE TABLE `penjual` (
 --
 
 INSERT INTO `penjual` (`email`, `username`, `nama`, `passwordd`, `jeniskelamin`, `usia`, `nohp`, `nmtoko`, `statusvalidasi`, `cvtoko`) VALUES
-('buka27@gmail.com', 'buka', 'abdul', 'impal100', 'L', 25, '81238467607', 'CV ABADI JAYA', 'valid', 'bersedia berjualan'),
-('jaya27@gmail.com', 'jaya', 'abdil', 'impal100', 'L', 25, '81238467607', 'CV ABADI JAYA', 'valid', 'bersedia berjualan'),
-('mekar27@gmail.com', 'mekar', 'anin', 'impal100', 'L', 25, '812384676056', 'CV ABADI JAYA', 'valid', 'bersedia berjualan'),
-('sumber27@gmail.com', 'sumber', 'anto', 'impal100', 'L', 25, '81238467065', 'CV ABADI JAYA', 'valid', 'bersedia berjualan'),
-('surya27@gmail.com', 'agung', 'dewa', 'impal100', 'L', 20, '081238463707', 'CV ABADI SENTOSA', 'valid', 'bersedia berjualan');
+('abs@gmail.com', 'Gde Agung', 'Gde Agung', 'brahma', 'Laki-laki', 20, '081238462787', 'UD Maju Jaya', 'tidak valid', 'kemah2.jpeg'),
+('agnung@gmail.com', 'Agung Brahma', 'Agung', 'brahma', 'Laki-laki', 19, '081238463703', 'UD Agung Sentosa', 'tidak valid', 'jam2.jpg'),
+('brahma@gmail.com', 'brahma', 'brahma', 'brahma', 'Laki-laki', 12, '081238463707', 'UD Maju Jaya', 'tidak valid', 'depan_regi14.png'),
+('buka27@gmail.com', 'buka', 'abdul', 'impal100', 'Laki-laki', 25, '81238467607', 'CV ABADI JAYA', 'valid', 'depan_regi.png'),
+('jaya27@gmail.com', 'jaya', 'abdil', 'impal100', 'Laki-laki', 25, '81238467607', 'CV ABADI JAYA', 'tidak valid', 'depan_regi.png'),
+('mekar27@gmail.com', 'mekar', 'anin', 'impal100', 'Laki-laki', 25, '812384676056', 'CV ABADI JAYA', 'tidak valid', 'depan_regi.png'),
+('sumber27@gmail.com', 'sumber', 'anto', 'impal100', 'Laki-laki', 25, '81238467065', 'CV ABADI JAYA', 'tidak valid', 'depan_regi.png'),
+('surya27@gmail.com', 'agung', 'dewa', 'impal100', 'Laki-laki', 20, '081238463707', 'CV ABADI SENTOSA', 'valid', 'depan_regi.png'),
+('suryanegara@gmail.com', 'Agung Surya', 'Suryanegara', 'brahma', 'Laki-laki', 20, '08123483843', 'UD Mekar Sentosa', 'tidak valid', 'kemah1.jpeg');
 
 --
 -- Indexes for dumped tables

@@ -52,10 +52,12 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6">
+				<a href="<?php echo base_url('') ?>index.php/home">
 					<img class="kiri" src="<?php echo base_url()?>assets/image/sendok.png"></img>
-					<h3 class="tulisan">Registrasi sebagai</h3>
-					<a href="<?php echo base_url('')?>index.php/home/regis_pembeli"><button type="button" class="btn btn-dark solid" style="margin-left: 10.5%; padding-left:10%; padding-right:10%; margin-right: 2%; font-family: Wacca Regular; margin-top: 2%">Pembeli</button></a>
-					<a href="<?php echo base_url('')?>index.php/home/regis_penjual"><button type="button" class="btn btn-light"style="padding-left:10%;padding-right:10%;font-family: Wacca Regular; margin-top: 2%">Penjual</button></a>
+				</a>		
+				<h3 class="tulisan">Registrasi sebagai</h3>
+				<a href="<?php echo base_url('')?>index.php/C_regispembeli"><button type="button" class="btn btn-dark solid" style="margin-left: 10.5%; padding-left:10%; padding-right:10%; margin-right: 2%; font-family: Wacca Regular; margin-top: 2%">Pembeli</button></a>
+				<a href="<?php echo base_url('')?>index.php/C_regispenjual"><button type="button" class="btn btn-light"style="padding-left:10%;padding-right:10%;font-family: Wacca Regular; margin-top: 2%">Penjual</button></a>
 			</div>
 			<div class="col-sm-6">
 				<div id="foto" class="tabisi">

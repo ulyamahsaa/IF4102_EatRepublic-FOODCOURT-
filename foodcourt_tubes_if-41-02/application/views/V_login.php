@@ -77,6 +77,12 @@
 		    	<center><strong>Registrasi Berhasil</strong> Selamat Datang di Food Court.</center>
   			</div>
   	<?php } ?>
+  	<?php if ($this->session->flashdata('notifgagal')) { ?>
+			<div class="alert alert-danger alert-dismissible">
+		    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		    	<center><strong>Login Gagal!</strong> Alamat email dan kata sandi yang dimasukan salah.</center>
+  			</div>
+  	<?php } ?>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-6">
@@ -86,7 +92,7 @@
 					<form action="<?php echo site_url('home/login')?>" method="POST"class="form-sigin">
 						<div class="form-group" style="margin-left: 10%; margin-right: 15%">
 					    	<input name="email" class="form-control" placeholder="Username" style="font-family: Wacca Regular">
-					    	<input name="passwordd" class="form-control" placeholder="Password" style="font-family: Wacca Regular">
+					    	<input type="Password" name="passwordd" class="form-control" placeholder="Password" style="font-family: Wacca Regular">
 						</div>
 						<button class="btn btn-dark solid" style="margin-left: 18.5%; padding-left:10%; padding-right:10%; margin-right: 5%; font-family: Wacca Regular">Login</button>
 						<a href="<?php echo base_url('') ?>index.php/home/regis"><button type="button" class="btn btn-light"style="padding-left:10%;padding-right:10%; font-family: Wacca Regular">Registrasi</button></a>

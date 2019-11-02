@@ -17,6 +17,7 @@ class M_registpembeli extends CI_model
 			$this->db->where('email',$email);
 			return $this->db->get('pembeli');
 		}
+	
 	}
 
 ?>

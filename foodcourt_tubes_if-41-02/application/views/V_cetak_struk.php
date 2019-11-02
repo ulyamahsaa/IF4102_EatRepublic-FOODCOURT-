@@ -57,26 +57,21 @@ body{
 
 
 <body>
+	 <?php if ($this->session->flashdata('notif')) { ?>
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center><strong>Pencetakan Struk</strong> Berhasil.</center>
+            </div>
+    <?php } ?>
 <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
   <ul class="navbar-nav">
     <li class="nav-item active">
-    	<a class="nav-link active" href="<?php echo base_url('') ?>index.php/home" disabled>
+    	<a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin" disabled>
       		<img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
   		</a>
     </li>
-    <li class="nav-item"> 
-      <a class="nav-link" href="<?php echo base_url('') ?>index.php/home/pesan" disabled><img src="<?php echo base_url()?>assets/image/payment-method.png" alt="payment"></a>
-      <p style="margin-left: 20px; font-family:'Wacca Regular' ">Pesan</p>
-    </li>
-    <li class="nav-item"> 
-      <a class="nav-link" style="margin-top:600px;" href="#" disabled>
-      	<img  src="<?php echo base_url()?>assets/image/logo.png" alt="payment">
-      </a>
-    </li>
-    <li class="nav-item" style="margin-top: 39rem;">
-    	<a class="nav-link" href="#">
-    		<img src="<?php echo base_url()?>assets/image/logo.png">
-    	</a>
+    <li class="nav-item" style="margin-top: 430%;"> 
+            <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
     </li>
   </ul>
 </nav>
@@ -99,33 +94,104 @@ body{
 						<th>Nama Makanan</th>
 						<th>Total Harga</th>
 						<th>Alamat Email</th>
+						<th>Status</th>
+						<th  style="text-align: center;">Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>123456</td>
-						<td>Muhammad Rezky Dwiafian</td>
-						<td>Soto Ayam</td>
-						<td>Rp15,000</td>
-						<td>rezky@ymail.com</td>
+					<tr role="row" class="odd">
+					<?php foreach ($pembayaran as $pbr):?>
+						<td tabindex="0">
+							 <?= $pbr["kodepembayaran"]?>
+						</td>
+						<td tabindex="0">
+							 <?= $pbr["namapemesana"]?>
+						</td>
+						<td tabindex="0">
+							 <?= $pbr["namamakanan"]?>
+						</td>
+						<td tabindex="0">
+							 <?= $pbr["totalharga"]?>
+						</td>
+						<td tabindex="0">
+							 <?= $pbr["email"]?>
+						</td>
+						<td tabindex="0">
+							 <?= $pbr["status"]?>
+						</td>
+						<td>
+							<button data-toggle="modal"  data-target="#modal-kirim<?= $pbr["kodepembayaran"]?>" class="btn btn-dark">Kirim</button>
+						</td>
 					</tr>
-					<tr>
-						<td>0123457</td>
-						<td>Gde Agung Brahmana S</td>
-						<td>Sate Ayam</td>
-						<td>Rp10,000</td>
-						<td>brahma@ymail.com</td>
-					</tr>
+				        <?php endforeach ?>
 				</tbody>
 			</table>
-		</div>
-		<div class="col-xs-12" style="margin-left: 80%">
-			<button class="btn btn-dark">Kirim</button>
-			<button class="btn btn-light">Cancel</button>	
-		</div>
+		
 	</div>
 </div>
 
+<!--PENGIRIMAN STRUK-->
+<?php foreach ($pembayaran as $pbr):?>
+<div class="modal fade" id="modal-kirim<?= $pbr["kodepembayaran"]?>" tabindex="-1" role="dialog" aria-labelledby="validate_modal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+         <h3 style="text-align: center; padding-left: 150px;">Kirim Struk
+         	 <p style="font-size: 20px;">Admin @ <?=$this->session->userdata('sesi')['nama']?></p>
+         </h3>
+      </div>
+      `<div class="modal-body">
+            <form method="post" action="<?php echo site_url('C_cetakstruk/proses_kirim')?>">
+                <div class="form-group" style="margin-top: -30px;">
+                    <label class="col-form-label">Kode Pembayaran</label>
+                    <input type="text" class="form-control" id="kodepembayaran" name="kodepembayaran" value="<?= $pbr["kodepembayaran"]?>" readonly>
+                    <label class="col-form-label">Nama Pemesan</label>
+                    <input type="text" class="form-control" id="namapemesana" name="namapemesana" value=" <?= $pbr["namapemesana"]?>" readonly>
+                    <label class="col-form-label">Nama Makanan</label>
+                    <input type="text" class="form-control" id="namamakanan" name="namamakanan" value="<?= $pbr["namamakanan"]?>" readonly>
+                    <label class="col-form-label">Total Harga</label>
+                    <input type="text" class="form-control" id="totalharga" name="totalharga" value=" <?= $pbr["totalharga"]?>" readonly>
+                    <label class="col-form-label">Alamat Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?= $pbr["email"]?>" readonly>
+                    <input type="hidden" class="form-control" id="status" name="status" value="berhasil" readonly>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" name="tombol">Kirim</button>
+                    <button class="btn btn-light" data-dismiss="modal">Tidak</button>   
+                </div>
+            </form>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<?php endforeach ?>
+
+<!-- ============ MODAL KELUAR AKUN =============== -->
+    <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
+                </div>
+                    <div class="modal-body">
+                        <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['nama']?> ?</b></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="<?php echo base_url('') ?>index.php/home/logout">
+                            <button class="btn btn-danger">Keluar</button>
+                        </a>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                    </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

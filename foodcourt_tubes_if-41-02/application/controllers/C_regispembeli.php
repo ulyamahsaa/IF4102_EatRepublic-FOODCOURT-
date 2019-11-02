@@ -6,6 +6,7 @@ class C_regispembeli extends CI_Controller {
 		{
 			parent::__construct();
 			$this->load->model('M_registpembeli');
+			//$this->load->model('M_registpenjual');
 		}
 	public function index()
  	{
@@ -16,6 +17,11 @@ class C_regispembeli extends CI_Controller {
  	public function proses_regis(){
  		$email = $this->input->post('email');
  		$cek = $this->M_registpembeli->cek_akun($email)->row_array();
+ 		// $cek1 = $this->M_registpenjual->cek_akun_penjual($email)->row_array();
+ 		// if ($email==$cek1) {
+ 		// 	echo "data tidak boleh sama";
+ 		// }
+ 		//else 
  		if($cek > 0){
  			$this->session->set_flashdata('notif', 'Register Gagal!
 			Alamat email telah terpakai akun lain.');

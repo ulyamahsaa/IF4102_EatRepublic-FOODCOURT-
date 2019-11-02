@@ -56,25 +56,16 @@ body{
 <body>
 <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
   <ul class="navbar-nav">
+  	
     <li class="nav-item active">
-    	<a class="nav-link active" href="<?php echo base_url('') ?>index.php/home" disabled>
+    	<a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin"disabled>
       		<img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
   		</a>
     </li>
-    <li class="nav-item"> 
-      <a class="nav-link" href="<?php echo base_url('') ?>index.php/home/pesan" disabled><img src="<?php echo base_url()?>assets/image/payment-method.png" alt="payment"></a>
-      <p style="margin-left: 20px; font-family:'Wacca Regular' ">Pesan</p>
+    <li class="nav-item" style="margin-top: 430%;"> 
+        <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
     </li>
-    <li class="nav-item"> 
-      <a class="nav-link" style="margin-top:600px;" href="<?php echo base_url('') ?>index.php/home/admin" disabled>
-      	<img  src="<?php echo base_url()?>assets/image/logo.png" alt="payment">
-      </a>
-    </li>
-    <li class="nav-item" style="margin-top: 39rem;">
-    	<a class="nav-link" href="#">
-    		<img src="<?php echo base_url()?>assets/image/logo.png">
-    	</a>
-    </li>
+
   </ul>
 </nav>
 
@@ -87,14 +78,14 @@ body{
 			<h1 class="text-center" style="color: orange">Menu Admin</h1>
 		</div>
 		<div class="col-xs-6" style="margin-top: 2rem;">
-			<a href="#">
+			<a href="<?php echo base_url('') ?>index.php/C_daftarakunpenjual">
 				<p class="text-center">
-					<button class="btn btn-dark" style="padding-left:6%;padding-right:6%" data-toggle="modal" data-target="#modal-validate">Validasi</button>
+					<button class="btn btn-dark" style="padding-left:6%;padding-right:6%" data-toggle="modal" >Validasi</button>
 				</p>
 			</a>
 		</div>
 		<div class="col-xs-6" style="margin-top: 1rem">
-			<a href="<?php echo base_url('') ?>index.php/home/cetak">
+			<a href="<?php echo base_url('') ?>index.php/C_cetakstruk">
 				<p class="text-center">
 					<button class="btn btn-light" style="padding-left:5%;padding-right:5%">Cetak struk</button>
 				</p>
@@ -104,32 +95,27 @@ body{
 	</div>
 	<br>
 </div>
+<!-- ============ MODAL KELUAR AKUN =============== -->
+    <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
+                </div>
+                    <div class="modal-body">
+                        <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['nama']?> ?</b></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="<?php echo base_url('') ?>index.php/home/logout">
+                            <button class="btn btn-danger">Keluar</button>
+                        </a>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                    </div>
+            </div>
+        </div>
+    </div>	
 		
-		<!-- modal for edit menu -->
-<div class="modal fade" id="modal-validate" tabindex="-1" role="dialog" aria-labelledby="validate_modal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h1 class="modal-title text-center">Warung Biru</h1>
-      </div>
-      `<div class="modal-body">
-      		<h3 class="text-center">Validasi Akun?</h3>
-      	</div>
-
-      	<div class="modal-footer">
-      	      	<button class="btn btn-dark">Ya</button>
-      			<button class="btn btn-light" data-dismiss="modal">Tidak</button>	
-      	</div>
-
-
-      </div>
-
-    </div>
-
-  </div>
-</div>
 
 </body>
 
