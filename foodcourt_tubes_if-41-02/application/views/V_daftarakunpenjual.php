@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
 </head>
 
 <style>
@@ -78,6 +79,7 @@
             <li class="nav-item active">
                 <a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin" disabled>
                     <img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
+                    <p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
                  </a>
             </li>
             <li class="nav-item" style="margin-top: 430%;"> 
@@ -93,13 +95,14 @@
             </div>
             <div class="col-xs-6">
                 <h1 class="text-center">Menu Validasi</h2>
+                <p class="text-center">Selamat datang admin, <strong><?= $this->session->userdata('sesi')['nama']?></strong> </p>
         </div>
         <div class="col-xs-6">
             <table class="table">
                 <thead>
                     <tr>
                         <th name="email" >Email</th>
-                        <th name ="nama">Nama Akun</th>
+                        <th name ="nama">Nama Toko</th>
                         <th>Status</th>
                         <th style="text-align: center;" >Aksi</th>
                     </tr>
@@ -119,6 +122,7 @@
                             <?= $pnjl["statusvalidasi"]?>
                         </td>
                         <td>
+                      
                             <center>
                                 <button style="margin-right: 10%; " type="button" class="btn btn-warning btn-sm" data-toggle="modal"  data-target="#modal-validasi<?= $pnjl["email"]?>">Update</button>
                                 <button type="button" class="btn btn-danger btn-sm"data-toggle="modal" data-target="#modal-hapus<?= $pnjl["email"]?>">Hapus</button>

@@ -68,6 +68,7 @@ body{
     <li class="nav-item active">
     	<a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin" disabled>
       		<img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
+      		<p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
   		</a>
     </li>
     <li class="nav-item" style="margin-top: 430%;"> 
@@ -84,6 +85,7 @@ body{
 		<div class="col-xs-6">
 			<h1 class="text-center">Pencetak Struk</h2>
 				<p class="text-center">mulai mencetak struk sebagai bukti transaksi</p>
+				<p class="text-center">Selamat datang admin, <strong><?= $this->session->userdata('sesi')['nama']?></strong> </p>
 		</div>
 		<div class="col-xs-6">
 			<table class="table">

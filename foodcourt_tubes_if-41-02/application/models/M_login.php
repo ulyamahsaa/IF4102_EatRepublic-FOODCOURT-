@@ -25,6 +25,7 @@ class M_login extends CI_model
 	 	$depan = $this->db->query("SELECT * FROM admin WHERE email = '$email'")->row_array()['nama'];
 	 	return $depan;
 	 }
+	 
 }
 
 ?>

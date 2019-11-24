@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Eat Republic</title>
+	<title>Eat Republic</title>	
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -91,7 +91,7 @@
 					<h4>Silahkan Login.</h4>
 					<form action="<?php echo site_url('home/login')?>" method="POST"class="form-sigin">
 						<div class="form-group" style="margin-left: 10%; margin-right: 15%">
-					    	<input name="email" class="form-control" placeholder="Username" style="font-family: Wacca Regular">
+					    	<input name="email" class="form-control" placeholder="Email" style="font-family: Wacca Regular" required="">
 					    	<input type="Password" name="passwordd" class="form-control" placeholder="Password" style="font-family: Wacca Regular">
 						</div>
 						<button class="btn btn-dark solid" style="margin-left: 18.5%; padding-left:10%; padding-right:10%; margin-right: 5%; font-family: Wacca Regular">Login</button>

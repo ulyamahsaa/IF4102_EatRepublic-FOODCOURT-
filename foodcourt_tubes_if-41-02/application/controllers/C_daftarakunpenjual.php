@@ -18,7 +18,7 @@ class C_daftarakunpenjual extends CI_Controller {
   	public function proses_hapus(){
   		$email= $this->input->post('email');
 		$this->M_daftarakunpenjual->hapus_akun($email);
-		$this->M_daftarakunpenjual->hapus_akun1($email);
+		// $this->M_daftarakunpenjual->hapus_akun1($email);
 
 		$this->session->set_flashdata('notif', 'Hapus akun berhasil');
 		redirect('C_daftarakunpenjual');

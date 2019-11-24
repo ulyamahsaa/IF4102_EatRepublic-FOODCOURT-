@@ -29,7 +29,7 @@ class home extends CI_Controller {
 
 			if(($cek2 > 0) && ($tes1 == true)){
 				$data_session = array(
-					'nama' => $nama,
+					'email' => $email,
 					'status' => "login"
 				);
 				$this->session->set_userdata('sesi',$data_session);
@@ -37,7 +37,7 @@ class home extends CI_Controller {
 
 			}else if($cek1 > 0){
 				$data_session = array(
-					'nama' => $nama,
+					'email' => $email,
 					'status' => "login"
 				);
 				$this->session->set_userdata('sesi',$data_session);
@@ -70,10 +70,6 @@ class home extends CI_Controller {
 		$this->load->view('V_menu_admin');
 	}
 
-
-	public function pesan(){
-		$this->load->view('V_pemesanan');
-	}
 	public function info(){
 		$this->load->view('V_info_bayar');
 	}
