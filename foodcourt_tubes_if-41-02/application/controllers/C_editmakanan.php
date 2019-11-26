@@ -11,7 +11,6 @@ class C_editmakanan extends CI_Controller {
 	public function index()
  	{
 
- 		// $current_user_email = $this->session->userdata('sesi')['email'];
  		$data['makanan'] = $this->M_menueditmakanan->show_menu();
   		$this->load->view('V_menu_edit_makanan',$data);
   		

@@ -88,7 +88,7 @@
             <br>
             <br>
             <div class="col-xs-6" style="margin-top: 1rem">
-                <a href="#">
+                <a href="<?php echo base_url('') ?>index.php/C_daftarmakanan">
                     <p class="text-center">
                         <button class="btn btn-dark" style="padding-left:5%;padding-right:5%">Pemesanan</button>
                     </p>

@@ -26,7 +26,7 @@ class M_menueditmakanan extends CI_model {
 
 		return $this->db->query("UPDATE makanan SET 
 			namamakanan = '$namamakanan' , 
-			-- gambar = '$gambar',
+			gambar = '$gambar',
 			harga = '$harga' ,
 			stok = '$stok'
 			WHERE

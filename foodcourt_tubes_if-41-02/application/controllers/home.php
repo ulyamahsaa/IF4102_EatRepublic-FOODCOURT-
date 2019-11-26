@@ -24,8 +24,7 @@ class home extends CI_Controller {
 
 
 			$tes1 = $this->M_login->cek_status($email);
-			$nama = $this->M_login->get_nama_admin($email);
-		
+			$nama = $this->M_login->get_nama_admin($email);		
 
 			if(($cek2 > 0) && ($tes1 == true)){
 				$data_session = array(
@@ -69,21 +68,6 @@ class home extends CI_Controller {
 	public function admin(){
 		$this->load->view('V_menu_admin');
 	}
-
-	public function info(){
-		$this->load->view('V_info_bayar');
-	}
-	public function buktibayar(){
-		$this->load->view('V_bukti_bayar');
-	}
-	public function informasibayar(){
-		$this->load->view('V_informasi_bayar');
-	}
-	
-	public function editmakanan(){
-		$this->load->view('V_menu_edit_makanan');
-	}
-
 
 
 }

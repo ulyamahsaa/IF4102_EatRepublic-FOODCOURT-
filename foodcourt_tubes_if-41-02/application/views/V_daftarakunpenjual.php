@@ -79,10 +79,10 @@
             <li class="nav-item active">
                 <a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin" disabled>
                     <img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
-                    <p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
+                    <p style="margin-left: 0px; font-family:'Wacca Regular' ">Kembali</p>
                  </a>
             </li>
-            <li class="nav-item" style="margin-top: 430%;"> 
+            <li class="nav-item" style="margin-top: 380%;"> 
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
         </ul>

@@ -81,8 +81,8 @@
     
     .tombol:hover,
     tr:hover {
-        background-color: rgba(0, 0, 0, 0.856);
-        color: white;
+        background-color: #FFF5EE;
+        color: black;
         cursor: pointer;
     }
     

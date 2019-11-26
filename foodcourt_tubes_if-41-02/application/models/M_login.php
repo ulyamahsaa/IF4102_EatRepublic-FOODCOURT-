@@ -24,7 +24,7 @@ class M_login extends CI_model
 	public function get_nama_admin($email) {
 	 	$depan = $this->db->query("SELECT * FROM admin WHERE email = '$email'")->row_array()['nama'];
 	 	return $depan;
-	 }
+	}
 	 
 }
 
