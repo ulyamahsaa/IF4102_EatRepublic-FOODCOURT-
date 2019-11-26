@@ -82,6 +82,7 @@
                     <p style="margin-left: 0px; font-family:'Wacca Regular' ">Kembali</p>
                  </a>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 380%;"> 
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -186,7 +187,7 @@
  <!-- ============ MODAL HAPUS AKUN PENJUAL =============== -->
  <?php foreach ($penjual as $pnjl) : ?>
     <div class="modal fade" id="modal-hapus<?= $pnjl["email"]?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 style="text-align: center; margin-left:2px;">Hapus Akun</h3>
@@ -209,7 +210,7 @@
 
 <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>

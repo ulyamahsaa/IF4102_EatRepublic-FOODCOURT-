@@ -55,6 +55,12 @@
         width: 50px;
         height: 100%;
     }
+    
+    #bsr {
+        height: 50px;
+        width: 140px;
+        font-size: 20px;
+    }
 </style>
 
 <body>
@@ -66,6 +72,7 @@
                 </a>
                 <p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 350px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -73,7 +80,7 @@
     </nav>
 
     <div class="page-content">
-        <div class="container box-color">
+        <div class="container box-color" style="margin-top: 10%">
             <div class="col-xs-6">
                 <h1 class="text-right"><img src="<?php echo base_url('')?>assets/image/logo.png"></h1>
             </div>
@@ -81,21 +88,21 @@
                 <h1 class="text-center" style="margin-right: 5rem; margin-top: 5rem;">Pembayaran anda <strong><span style="color: grey;">Berhasil!</span></strong>  </h1>
             </div>
             <div class="col-xs-6">
-                <a href="<?php echo base_url('') ?>index.php/C_daftarmakanan"><h5 class="text-right" style="margin-right: 5rem; margin-top: 5rem;"><button class="btn btn-dark" style="margin-bottom: 3rem;">OK</button></h5></a>
+                <a href="<?php echo base_url('') ?>index.php/C_daftarmakanan"><h5 class="text-right" style="margin-right: 5rem; margin-top: 5rem;"><button class="btn btn-dark" style="margin-bottom: 3rem;" id="bsr">OK</button></h5></a>
 
             </div>
         </div>
     </div>
      <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <h3 style="text-align: center; font-size: 30px; font-family: Wacca Regular">Keluar Akun</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                 </div>
                 <div class="modal-body">
-                    <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></p>
+                    <h5 style="font-family: Wacca Regular; text-align: center">Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></h5>
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo base_url('') ?>index.php/home/logout">

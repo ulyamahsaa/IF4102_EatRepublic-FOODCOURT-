@@ -68,10 +68,11 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link active" href="<?php echo base_url('') ?>index.php/C_menuadmin" disabled>
-          <img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
-          <p style="margin-left: 0px; font-family:'Wacca Regular' ">Kembali</p>
-      </a>
+                        <img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
+                        <p style="margin-left: 0px; font-family:'Wacca Regular' ">Kembali</p>
+                        </a>
                     </li>
+                    <br><br><br><br><br><br><br><br><br><br><br>
                     <li class="nav-item" style="margin-top: 370%;">
                         <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
                     </li>
@@ -183,7 +184,7 @@
 
 <?php foreach ($pembayaran as $pbr):?>
     <div class="modal fade" id="modal-hapus<?= $pbr["kodetransaksi"]?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 style="text-align: center; margin-left:2px;">Hapus Akun</h3>
@@ -207,7 +208,7 @@
 
 <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>

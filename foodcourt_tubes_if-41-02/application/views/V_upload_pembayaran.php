@@ -64,8 +64,6 @@
     }
     
     table {
-        font-family: arial, sans-serif;
-        /* border:none; */
         width: 90%;
         margin: auto;
     }
@@ -89,9 +87,10 @@
     }
     
     #bsr {
+        font-family: Wacca Regular;
         height: 50px;
         width: 140px;
-        font-size: large;
+        font-size: 20px;
     }
 </style>
 
@@ -105,6 +104,7 @@
                 </a>
                 <p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 350px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -114,7 +114,7 @@
     <div class="page-content">
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%">
             <div class=row>
-                <div class="col-10" style="padding-top: 3%; padding-left: 32%">
+                <div class="col-10" style="padding-top: 3%; padding-left: 37%">
                     <h2 class="font-weight-bold" style="font-family: palatino">Upload Bukti Pembayaran</h2>
                 </div>
                 <div class="col-2">
@@ -127,7 +127,7 @@
                     <input  type="file" name="bukti_pembayaran" id="bukti_pembayaran" class="form-control">
                 </div>          
                 <div style="margin-top: 6%" class="text-center">
-                    <button type="submit" class="btn btn-dark">Upload</button>
+                    <button id="bsr" type="submit" class="btn btn-dark">Upload</button>
                 </div>
             </form>
         </div>

@@ -17,6 +17,7 @@
         background-image: url("<?php echo base_url()?>assets/image/bg.jpg");
         background-repeat: no-repeat;
         font-family: Wacca Regular;
+        src: url('Wacca-Regular.otf');
     }
     
     .vertical-navigation {
@@ -62,10 +63,9 @@
     }
     
     table {
-        font-family: arial, sans-serif;
-        /* border:none; */
         width: 90%;
         margin: auto;
+        font-size:20px
     }
     
     td,
@@ -91,6 +91,12 @@
         width: 140px;
         font-size: large;
     }
+
+    #btnBayar{
+        float: right; margin-right: 460px;
+        margin-top: 2%; font-size: 20px;
+        height: 60px; width: 125px;
+    }
 </style>
 
 <body>
@@ -107,20 +113,21 @@
                 <a class="nav-link" href="<?php echo base_url('') ?>index.php/C_daftarpesanan" disabled><img src="<?php echo base_url('')?>assets/image/payment-method.png" alt="payment"></a>
                 <p style="margin-left: 25px; font-family:'Wacca Regular' ">Pesan</p>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 200px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
         </ul>
     </nav>
 
-    <div class="page-content">
+    <div class="page-content" style="font-family: Wacca Regular">
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%">
             <div class=row>
                 <div class="col-8" style="padding-top: 1%; padding-left: 38%">
-                    <h2 class="text-center">Daftar Pesanan</h2>
+                    <h2 class="text-center" style="font-family: Wacca Regular; font-size:45px">Daftar Pesanan</h2>
                     <marquee>
 
-                    <p class="text-center">Selamat datang di <strong> @EAT REPUBLIC </strong> <?= $this->session->userdata('sesi')['email']?></p>
+                    <p class="text-center" style="font-size:20px">Selamat datang di <strong> @EAT REPUBLIC </strong> <?= $this->session->userdata('sesi')['email']?></p>
                 </marquee>
                 </div>
                 <div class="col-4">
@@ -147,7 +154,7 @@
                            <img src="<?php echo base_url('assets/upload/')?><?= $mmn["gambar"]?> " width="100" />
                         </td>
                         <td>
-                            <?= $mmn['harga']; ?>
+                            Rp. <?= $mmn['harga']; ?>
                         </td>
                         <td>
                             <button class="w3-button w3-xlarge w3-circle w3-red" data-toggle="modal"  data-target="#modal-hapus<?= $mmn['idmakanan']; ?>">X</button>
@@ -162,12 +169,12 @@
                     <td colspan="2">Total harga</td>
                     <td colspan="2" name="totalharga">
                         <strong>
-                             <?= $tot ?>
+                             Rp. <?= $tot ?>
                         </strong>
                     </td>       
                 </table>
                 <br>
-                <button style="float: right;margin-right: 80px;" class="btn btn-danger" data-toggle="modal"  data-target="#modal-bayar">Bayar</button>
+                <button id="btnBayar" class="btn btn-danger" data-toggle="modal"  data-target="#modal-bayar">Bayar</button>
 
             </div>
         </div>
@@ -180,30 +187,29 @@
 <div class="modal fade" id="modal-bayar" tabindex="-1" role="dialog" aria-labelledby="validate_modal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
 
-    <div class="modal-content">
-
+    <div class="modal-content" style="font-family: Wacca-Regular">
       <div class="modal-header">
-         <h3 style="text-align: center; padding-left: 150px;">Bayar makanan</h3>
+         <h2 style="text-align: center; padding-left: 150px; font-family: Wacca-Regular">Bayar makanan</h3>
       </div>
       `<div class="modal-body">
-            <form method="post" action="<?php echo site_url('C_daftarpesanan/proses_bayar')?>">
+            <form method="post" action="<?php echo site_url('C_daftarpesanan/proses_bayar')?>" style="font-size: 22px">
                 <div class="form-group">
                     <label class="col-form-label">Nama makanan</label>
-                    <input type="text" class="form-control" id="namamakanan" name="namamakanan" value="<?= $tamp ?>" readonly>
+                    <input style="font-size: 18px" type="text" class="form-control" id="namamakanan" name="namamakanan" value="<?= $tamp ?>" readonly>
                 </div>
                 <div class="form-group">
                     <input type="hidden" class="form-control" id="status" name="status" value=" " readonly>
                     <input type="hidden" class="form-control" id="kodepembayaran" name="kodepembayaran" value="<?= $mmn['kodepembayaran']; ?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label class="col-form-label">total harga</label>
-                    <input type="text" class="form-control" id="totalharga" name="totalharga" value="<?= $tot ?>" readonly>
+                    <label class="col-form-label">Total harga</label>
+                    <input style="font-size: 18px" type="text" class="form-control" id="totalharga" name="totalharga" value="Rp. <?= $tot ?>" readonly> 
                     <input type="hidden" class="form-control" id="namapemesan" name="namapemesan" value=" " readonly>
 
                 </div>
                 <div class="modal-footer">
-                    <button onclick="location.href='<?php echo base_url('')?>index.php/C_kodepembayaran'" class="btn btn-dark" name="tombol">Ya</button>
-                    <button class="btn btn-light" data-dismiss="modal">Tidak</button>   
+                    <button style="width: 80px; margin-right: 40px" onclick="location.href='<?php echo base_url('')?>index.php/C_kodepembayaran'" class="btn btn-dark" name="tombol">Ya</button>
+                    <button style="width: 80px; margin-right: 120px" class="btn btn-light" data-dismiss="modal">Tidak</button>   
                 </div>
             </form>
         </div>
@@ -225,14 +231,14 @@
 
     <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <h3 style="text-align: center; font-size: 30px; font-family: Wacca Regular">Keluar Akun</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                 </div>
                 <div class="modal-body">
-                    <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></p>
+                    <h5 style="font-family: Wacca Regular; text-align: center">Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></h5>
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo base_url('') ?>index.php/home/logout">
@@ -243,23 +249,23 @@
             </div>
         </div>
     </div>
-     <!-- ============ MODAL HAPUS AKUN PENJUAL =============== -->
+     <!-- ============ MODAL HAPUS PESANAN =============== -->
  <?php foreach ($memesan as $mmn) : ?>
     <div class="modal fade" id="modal-hapus<?= $mmn['idmakanan']; ?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="font-family: Wacca Regular">
                 <div class="modal-header">
-                    <h3 style="text-align: center; margin-left:2px;">Hapus Akun</h3>
+                    <h3 style="text-align: center; margin-left:2px; font-family: Wacca Regular">Hapus Pesanan</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                 </div>
                 <form class="form-horizontal" method="post" action="<?php echo site_url('C_daftarpesanan/proses_hapus')?>">
-                    <div class="modal-body">
-                        <p>Anda yakin mau menghapus <b> <?= $mmn['namamakanan']; ?></b></p>
+                    <div class="modal-body" style="text-align: center; font-family: Wacca Regular">
+                        <p style="font-size: 20px">Anda yakin ingin menghapus <b> <?= $mmn['namamakanan']; ?></b>?</p>
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="kodepembayaran" id="kodepembayaran" value=" <?= $mmn['kodepembayaran']; ?>">
                         <button class="btn btn-danger">Hapus</button>
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tidak</button>
                     </div>
                 </form>
             </div>

@@ -63,8 +63,6 @@
     }
     
     table {
-        font-family: arial, sans-serif;
-        /* border:none; */
         width: 90%;
         margin: auto;
     }
@@ -92,6 +90,11 @@
         width: 140px;
         font-size: large;
     }
+
+    #btnPbyr{
+        height: 60px; width: 200px;
+        color: black; font-size: 20px;
+    }
 </style>
 
 <body>
@@ -104,6 +107,7 @@
                 </a>
                 <p style="margin-left: 20px; font-family:'Wacca Regular' ">Kembali</p>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 350px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -122,10 +126,10 @@
             </div>
 
             <?php foreach ($pembayaran as $prn) : ?>
-            <p style="padding-top: 3%; color: #FFE303; font-size: 50px; font-family: times" class="text-center"><?= $prn['kodepembayaran'] ?></p>
+            <p style="padding-top: 3%; color: #FFE303; font-size: 80px; font-family: times" class="text-center"><?= $prn['kodepembayaran'] ?></p>
             <?php endforeach ?>
             <div style="margin-top: 6%" class="text-center">
-                 <button onclick="location.href='<?php echo base_url()?>index.php/C_upload_pembayaran'" type="button" class="btn btn-outline-warning">Pembayaran</button>
+                 <button id="btnPbyr" onclick="location.href='<?php echo base_url()?>index.php/C_upload_pembayaran'" type="button" class="btn btn-outline-warning">Pembayaran</button>
             </div>
            
         </div>
@@ -138,14 +142,14 @@
 
     <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <h3 style="text-align: center; font-size: 30px; font-family: Wacca Regular">Keluar Akun</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                 </div>
                 <div class="modal-body">
-                    <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></p>
+                    <h5 style="font-family: Wacca Regular; text-align: center">Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></h5>
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo base_url('') ?>index.php/home/logout">

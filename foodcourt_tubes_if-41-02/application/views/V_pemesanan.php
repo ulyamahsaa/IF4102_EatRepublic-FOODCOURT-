@@ -71,6 +71,7 @@
       				<img src="<?php echo base_url('')?>assets/image/sendok.png" alt="menu">
   				</a>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 380px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -97,27 +98,28 @@
 
         </div>
         <br>
-    </div>
+    </div> 
+
     <!-- ============ MODAL KELUAR AKUN =============== -->
     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
+                    <h3 style="text-align: center; font-size: 30px; font-family: Wacca Regular">Keluar Akun</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                 </div>
-                    <div class="modal-body">
-                        <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="<?php echo base_url('') ?>index.php/home/logout">
-                            <button class="btn btn-danger">Keluar</button>
-                        </a>
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
-                    </div>
+                <div class="modal-body">
+                    <h5 style="font-family: Wacca Regular; text-align: center">Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></h5>
+                </div>
+                <div class="modal-footer">
+                    <a href="<?php echo base_url('') ?>index.php/home/logout">
+                        <button class="btn btn-danger">Keluar</button>
+                    </a>
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Tutup</button>
+                </div>
             </div>
         </div>
-    </div>  
+    </div>
     
 
 </body>

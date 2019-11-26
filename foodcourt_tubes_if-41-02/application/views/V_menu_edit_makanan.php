@@ -62,8 +62,6 @@
     }
     
     table {
-        font-family: arial, sans-serif;
-        /* border:none; */
         width: 90%;
         margin: auto;
     }
@@ -91,6 +89,10 @@
         width: 140px;
         font-size: large;
     }
+
+    #exampleModalCenterTitle{
+        padding-left: 45px;
+    }
 </style>
 
 <body>
@@ -102,22 +104,26 @@
                     <img src="<?php echo base_url()?>assets/image/sendok.png" alt="menu">
                 </a>
             </li>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 370px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
         </ul>
     </nav>
 
-    <div class="page-content">
-        <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%">
+    <div class="page-content" style="margin-top : -75px">
+        <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%; height: 630px">
             <div class=row>
-                <div class="col-8" style="padding-top: 1%; padding-left: 38%">
-                    <h1 class="text-center">Menu Edit Makanan</h1>
-                    <p class="text-center">Hai <?= $this->session->userdata('sesi')['email']?>!</p>
+                <div class="col-8" style="padding-top: 1%; padding-left: 36%">
+                    <br>
+                    <h1>Menu Edit Makanan</h1>
                 </div>
                 <div class="col-4">
                     <h1 class="text-right"><img src="<?php echo base_url()?>assets/image/logo.png"></h1>
                 </div>
+            </div>
+            <div style="font-size: 20px">
+                <p class="text-center">Hai <?= $this->session->userdata('sesi')['email']?>!</p>
             </div>
             <!-- searchbar -->
             <div>
@@ -131,7 +137,7 @@
                 </form>
             </div>
 
-            <div style="height: 280px; overflow: auto">
+            <div style="height: 400px; overflow: auto">
                 <table id="myTable">
                     <tr id=header>
                         <th>No</th>
@@ -142,7 +148,7 @@
                         <th>Aksi</th>
                     </tr>
                     <?php $counter=0; foreach ($makanan as $mkn) : $counter++; ?>
-                        <tr>
+                        <tr style="font-size: 20px">
                             <td>
                                 <?= $counter?>
                             </td>
@@ -176,7 +182,7 @@
                 </table>
 
             </div>
-            <button class="btn btn-default btn-sm btn-dark" style="margin-left: 750px;margin-top: -650px;" onclick="" class="text-center" data-toggle="modal" data-target="#modal-add-menu"> Add New Menu </button>
+            <button class="btn btn-default btn-sm btn-dark" style="margin-left: 750px;margin-top: -892px;" onclick="" class="text-center" data-toggle="modal" data-target="#modal-add-menu"> Add New Menu </button>
         </div>
 
     </div>
@@ -189,47 +195,47 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content" style="padding-left: 50px">
                     <div class="modal-header">
-                        <h1 class="modal-title text-center" id="exampleModalCenterTitle">Edit Makanan</h1>
+                        <h1 class="modal-title text-center" id="exampleModalCenterTitle" style="padding-left:80px">Edit Makanan</h1>
                     </div>
                     <form method="POST" action="<?= site_url('C_editmakanan/edit_menu');?>">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <label>ID Makanan</label>
-                                    <input type="text" name="idmakanan" class="form-control text-center" value="<?= $edit_menu['idmakanan']?>" readonly>
+                                    <input type="text" name="idmakanan" style="width: 400px" class="form-control text-center" value="<?= $edit_menu['idmakanan']?>" readonly>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <label>Nama Makanan</label>
-                                    <input type="text" name="namamakanan" value="<?= $edit_menu['namamakanan']?>" class="form-control text-center">
+                                    <input type="text" name="namamakanan" value="<?= $edit_menu['namamakanan']?>" class="form-control text-center" style="width: 400px">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <label>Harga</label>
-                                    <input type="text" value="<?= $edit_menu['harga']?>" name="harga" class="form-control text-center">
+                                    <input type="text" value="<?= $edit_menu['harga']?>" name="harga" class="form-control text-center" style="width: 400px">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <label>Stok</label>
-                                    <input type="text" name="stok" value="<?= $edit_menu['stok']?>" class="form-control text-center">
+                                    <input type="text" name="stok" value="<?= $edit_menu['stok']?>" class="form-control text-center" style="width: 400px">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <label>Foto Makanan</label>
-                                    <input type="file" name="gambar" class="form-control text-center">
+                                    <input type="file" name="gambar" class="form-control text-center" style="width: 400px">
                                 </div>
                             </div>
                            <br>
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <button type="submit" class="btn btn-dark">Edit</button>
+                                    <button type="submit" class="btn btn-dark" style="width: 100px; height: 50px; margin-right:190px">Edit</button>
                                 </div>
                                 <div class="col-xs-6">
-                                    <button style="margin-left: 10px" class="btn btn-light" data-dismiss="modal">Batal</button>
+                                    <button style="margin-left: 10px; width: 100px; height: 50px" class="btn btn-light" data-dismiss="modal">Batal</button>
                                 </div>
                             </div>
                     </form>
@@ -245,17 +251,17 @@
                     <div class="modal-dialog modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h3 style="text-align: center; margin-left:2px;">Konfirmasi Membuang Menu Makanan?</h3>
+                                <h3 style="text-align: center; padding-left: 40px">Konfirmasi Membuang Menu Makanan</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                             </div>
-                            <div class="modal-body">
-                                <p>Anda yakin untuk membuang makanan <b><?=$delete_food['namamakanan'];?>?</b></p>
+                            <div class="modal-body" style="text-align: center">
+                                <h5>Anda yakin untuk membuang <b><?=$delete_food['namamakanan'];?>?</b></p>
                             </div>
                             <div class="modal-footer">
                                 <form action="<?= site_url('C_editmakanan/remove_menu');?>" method="POST">
                                     <input type="hidden" name="idmakanan" id="idmakanan" value="<?= $delete_food['idmakanan'];?>">
-                                    <button class="btn btn-danger" type="submit">Ya</button>
-                                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Tidak</button>
+                                    <button class="btn btn-danger" type="submit" style="width: 100px; height: 50px; margin-right: 160px">Ya</button>
+                                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" style="width: 100px; height: 50px; margin-right: 50px">Tidak</button>
                                 </form>
                             </div>
                         </div>
@@ -280,35 +286,35 @@
                                         <div class="row">
                                             <div class="col-xs-8">
                                                 <label>Nama Makanan</label>
-                                                <input type="text" name="namamakanan" class="form-control">
+                                                <input type="text" name="namamakanan" class="form-control" style="width: 400px">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-8">
                                                 <label>Harga</label>
-                                                <input type="text" name="harga" class="form-control">
+                                                <input type="text" name="harga" class="form-control" style="width: 400px">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-8">
                                                 <label>Stok</label>
-                                                <input type="text" name="stok" class="form-control">
+                                                <input type="text" name="stok" class="form-control" style="width: 400px">
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-xs-8">
                                                 <label>Foto Makanan</label>
-                                                <input type="file" name="gambar" class="form-control">
+                                                <input type="file" name="gambar" class="form-control" style="width: 400px">
                                             </div>
                                         </div>
                                         <br>
                                         <div class="row">
                                             <div class="col-xs-6">
-                                                <button type="submit" class="btn btn-dark">Tambah</button>
+                                                <button type="submit" class="btn btn-dark" style="width: 100px; height: 50px; margin-right:190px">Tambah</button>
                                         </div>
                                 </form>
                                 <div class="col-xs-6">
-                                    <button style="margin-left: 10px"class="btn btn-light" data-dismiss="modal">Batal</button>
+                                    <button style="margin-left: 10px; width: 100px; height: 50px"class="btn btn-light" data-dismiss="modal">Batal</button>
                                 </div>
                                 </div>
                                 </div>
@@ -317,14 +323,14 @@
                     </div>
                     <!-- ============ MODAL KELUAR AKUN =============== -->
                     <div class="modal fade" id="modal-keluar" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h3 style="text-align: center; margin-left:2px;">Keluar Akun</h3>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="margin-right: 1px;">x</button>
                                 </div>
-                                    <div class="modal-body">
-                                        <p>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></p>
+                                    <div class="modal-body" style="text-align: center">
+                                        <h5>Anda yakin mau Keluar <b> <?=$this->session->userdata('sesi')['email']?> ?</b></h5>
                                     </div>
                                     <div class="modal-footer">
                                         <a href="<?php echo base_url('') ?>index.php/home/logout">

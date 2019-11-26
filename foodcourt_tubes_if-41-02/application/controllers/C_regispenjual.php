@@ -17,9 +17,8 @@ class C_regispenjual extends CI_Controller {
  		if($cek > 0){
  				$this->session->set_flashdata('notif', 'Register Gagal!
 				Alamat email telah terpakai akun lain.');
- 				redirect('C_regispenjual');
- 				
-
+				 redirect('C_regispenjual');
+				 
  		}else{
  				$config['upload_path'] = './assets/upload/';    
 				$config['allowed_types'] = 'jpg|png|jpeg';  
