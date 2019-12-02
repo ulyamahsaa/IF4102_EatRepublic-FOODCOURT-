@@ -56,14 +56,11 @@ class C_editmakanan extends CI_Controller {
  	}
 
  	public function remove_menu(){
- 		$delete_food = $this->M_menueditmakanan->remove_food();
- 		if($delete_food < 0){
- 			$this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p class="text-center">Food is unable to be remove.</p></div>');  			
- 		}
- 		else{
- 			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><p class="text-center">Food has been deleted.</p></div>'); 
- 		}
+ 		$this->M_menueditmakanan->remove_food();
+ 		$this->session->set_flashdata('notifhapus', 'Makanan berhasil dihapus.');
  		redirect('C_editmakanan');
+ 		
+
  	}
  }
 
