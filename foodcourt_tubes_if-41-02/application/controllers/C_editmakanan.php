@@ -46,13 +46,9 @@ class C_editmakanan extends CI_Controller {
  	
 
  	public function edit_menu(){
- 		$edit_food = $this->M_menueditmakanan->edit_food();
-	 		if($edit_food<0){
-	            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible" role="alert"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><p class="text-center">Edit Un-Successful. Please Try Again Later.</p></div>');	
-	        }else {
-	            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><p class="text-center">Edit Succesful</p></div>'); 	
-	        }
-	 		redirect('C_editmakanan');
+ 		$this->M_menueditmakanan->edit_food();
+ 		$this->session->set_flashdata('notifedit', 'Berhasil Mengedit Makanan.');
+	 	redirect('C_editmakanan');
  	}
 
  	public function remove_menu(){

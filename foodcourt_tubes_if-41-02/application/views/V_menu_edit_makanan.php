@@ -108,6 +108,12 @@
                 <center><strong>Makanan berhasil</strong> dihapus.</center>
             </div>
     <?php } ?>
+    <?php if ($this->session->flashdata('notifedit')) { ?>
+            <div class="alert alert-success alert-dark">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center><strong>Berhasil</strong> Mengedit Makanan.</center>
+            </div>
+    <?php } ?>
     <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
         <ul class="navbar-nav">
             <li class="nav-item active">
