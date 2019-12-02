@@ -108,7 +108,6 @@
                 <a class="nav-link" href="<?php echo base_url('') ?>index.php/C_daftarpesanan" disabled><img src="<?php echo base_url('')?>assets/image/payment-method.png" alt="payment"></a>
                 <p style="margin-left: 25px; font-family:'Wacca Regular' ">Pesan</p>
             </li>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
             <li class="nav-item" style="margin-top: 200px;">
                 <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
             </li>
@@ -118,10 +117,10 @@
     <div class="page-content" style="margin-top : -75px">
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%; height: 630px">
             <div class=row>
-                <div class="col-8" style="padding-top: 1%; padding-left: 38%">
+                <div class="col-10" style="padding-top: 1%; padding-left: 22%">
                     <h1 class="text-center" style="font-size: 45px; font-family: Wacca Regular">Menu Makanan</h1>
                 </div>
-                <div class="col-4">
+                <div class="col-2">
                     <h1 class="text-right"><img src="<?php echo base_url()?>assets/image/logo.png"></h1>
                 </div>
             </div>

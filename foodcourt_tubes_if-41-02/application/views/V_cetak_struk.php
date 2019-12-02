@@ -72,7 +72,6 @@
                         <p style="margin-left: 0px; font-family:'Wacca Regular' ">Kembali</p>
                         </a>
                     </li>
-                    <br><br><br><br><br><br><br><br><br><br><br>
                     <li class="nav-item" style="margin-top: 370%;">
                         <a class="nav-link" href="#"><img src="<?php echo base_url()?>assets/image/keluar2.png" alt="keluar"data-toggle="modal" data-target="#modal-keluar"></a>
                     </li>
