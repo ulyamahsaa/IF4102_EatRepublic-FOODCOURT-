@@ -100,7 +100,12 @@
 </style>
 
 <body>
-
+    <?php if ($this->session->flashdata('notifhapus')) { ?>
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center><strong>Makanan berhasil</strong> dibuang.</center>
+            </div>
+    <?php } ?>
     <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -123,7 +128,7 @@
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%">
             <div class=row>
                 <div class="col-10" style="padding-top: 1%; padding-left: 23%">
-                    <h2 class="text-center" style="font-family: Wacca Regular; font-size:45px">Daftar Pesanan</h2>
+                    <h3 class="text-center" style="font-family: Wacca Regular; font-size:40px">Daftar Pesanan</h3>
                     <marquee>
 
                     <p class="text-center" style="font-size:20px">Selamat datang di <strong> @EAT REPUBLIC </strong> <?= $this->session->userdata('sesi')['email']?></p>

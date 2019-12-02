@@ -16,7 +16,8 @@ class C_daftarmakanan extends CI_Controller {
   	
   	}
   	public function proses_tambah(){
-  		$this->M_daftarmakanan->tambah();
+  	$this->M_daftarmakanan->tambah();
+    $this->session->set_flashdata('notif', 'Berhasil Menambahkan Makanan ke Keranjang.');
  		redirect('C_daftarmakanan');
 
   	}

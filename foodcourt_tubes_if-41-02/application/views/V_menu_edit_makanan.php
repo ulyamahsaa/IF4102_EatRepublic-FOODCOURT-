@@ -130,7 +130,7 @@
     <div class="page-content" style="margin-top : -75px">
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%; height: 630px">
             <div class=row>
-                <div class="col-10" style="padding-top: 1%; padding-left: 36%">
+                <div class="col-10" style="padding-left: 33%">
                     <br>
                     <h1>Menu Edit Makanan</h1>
                 </div>

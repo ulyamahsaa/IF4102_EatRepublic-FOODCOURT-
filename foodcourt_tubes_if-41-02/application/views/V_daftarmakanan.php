@@ -95,7 +95,12 @@
 </style>
 
 <body>
-
+    <?php if ($this->session->flashdata('notif')) { ?>
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center><strong>Berhasil</strong> Menambahkan Makanan ke Keranjang.</center>
+            </div>
+    <?php } ?>
     <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -118,7 +123,7 @@
         <div class="container box-color_edit" style="padding-bottom: 8%; margin-top: 10%; height: 630px">
             <div class=row>
                 <div class="col-10" style="padding-top: 1%; padding-left: 22%">
-                    <h1 class="text-center" style="font-size: 45px; font-family: Wacca Regular">Menu Makanan</h1>
+                    <h3 class="text-center" style="font-size: 40px; font-family: Wacca Regular">Menu Makanan</h3>
                 </div>
                 <div class="col-2">
                     <h1 class="text-right"><img src="<?php echo base_url()?>assets/image/logo.png"></h1>
