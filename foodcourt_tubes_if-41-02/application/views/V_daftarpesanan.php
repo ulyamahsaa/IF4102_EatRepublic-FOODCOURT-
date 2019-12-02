@@ -202,7 +202,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-form-label">Total harga</label>
-                    <input style="font-size: 18px" type="text" class="form-control" id="totalharga" name="totalharga" value="Rp. <?= $tot ?>" readonly> 
+                    <input style="font-size: 18px" type="text" class="form-control" id="totalharga" name="totalharga" value="<?= $tot ?>" readonly> 
                     <input type="hidden" class="form-control" id="namapemesan" name="namapemesan" value=" " readonly>
 
                 </div>

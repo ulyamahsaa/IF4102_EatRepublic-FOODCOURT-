@@ -96,7 +96,12 @@
 </style>
 
 <body>
-
+    <?php if ($this->session->flashdata('notif')) { ?>
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <center><strong>Selamat Anda Berhasil</strong> Menambahkan Makanan.</center>
+            </div>
+    <?php } ?>
     <nav class="navbar-light bg-light vertical-navigation" style="width: 90px">
         <ul class="navbar-nav">
             <li class="nav-item active">

@@ -35,6 +35,7 @@ class C_editmakanan extends CI_Controller {
 			$harga = $this->input->post('harga',true);
 			$stok = $this->input->post('stok',true);
 			$this->M_menueditmakanan->add_menuu($email,$namamakanan,$gambar,$harga,$stok);
+			$this->session->set_flashdata('notif', 'Selamat Anda Berhasil menambahkan makanan.');
 				redirect('C_editmakanan');
 			}else{
 				redirect('C_editmakanan');
